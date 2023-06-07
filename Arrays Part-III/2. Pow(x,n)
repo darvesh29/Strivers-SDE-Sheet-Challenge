@@ -1,0 +1,56 @@
+class Solution {
+    public double myPow(double x, int n) {
+        double ans=1.0;
+        long N = n ;
+        if(n<0)
+        {
+            N = -1*N ;
+            x=1/x ;
+        }
+        while(N>0)
+        {
+            if(N%2==1)
+            {
+                ans*=x ;
+                N--;
+            }
+            else
+            {
+                x*=x  ;
+                N/=2 ;
+            }
+        }
+          return ans ;
+    }
+}
+
+
+// For modular exponentiation problem , i.e (x^n)%m
+code----
+
+ public static int modularExponentiation(int x, int n, int m) {
+        long ans = 1 ;
+        long X = x ;
+         long N = n ;
+         long M=m;
+        if(n<0)
+        {
+            N = -1*N ;
+            X=1/X ;
+        }
+        while(N>0)
+        {
+            if(N%2==1)
+            {
+                ans=(ans*X)%M ;
+                N--;
+            }
+            else
+            {
+                X=(X*X)%M  ;
+                N/=2 ;
+            }
+        }
+       
+         return(int)ans ;
+         }
